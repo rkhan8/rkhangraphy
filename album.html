@@ -57,6 +57,7 @@ img.emoji {
 <link rel="alternate" type="text/xml+oembed" href="https://livewp.site/wp/md/soho/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flivewp.site%2Fwp%2Fmd%2Fsoho%2Falbums%2F&#038;format=xml" />
 <script>var soho_var = true;</script></head>
 <link rel='stylesheet' id='gt3_default_style-css'  href='css.css' type='text/css' media='all' />
+
 <!--include ANGULAR JS -->
 <script src="lib/angular/angular.min.js"></script>
 
@@ -148,7 +149,29 @@ img.emoji {
 			.optionset li a:hover {
 				color:#ef969a;
 			}			
-		</style>
+        </style>
+        
+        <div class="blogpost_preview_fw post-195 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets">
+            <div class="fw_preview_wrapper featured_items" ng-repeat="detail in details">
+                <div class="img_block wrapped_img">
+                    <a href="https://livewp.site/wp/md/soho/gallery/underground/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2017/11/17-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
+                </div>
+                <div class="bottom_box">
+                    <div class="bc_content">
+                        <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/underground/">{{detail.category}}</a></h5>
+                        <div class="featured_items_meta">
+                            <span class="preview_meta_data">{{detail.created_date}}</span>
+                            <span class="middot">&middot;</span>
+                            <span>{{detail.likes}}</span>                                    
+                        </div>									
+                    </div>
+                    <div class="bc_likes gallery_likes_add " data-attachid="195" data-modify="like_album">
+                        <i class="stand_icon icon-heart-o"></i>
+                        <span>8</span>
+                    </div>
+                </div>                                                
+            </div>
+        </div>            
         
         <!--
 				<div class="blogpost_preview_fw post-195 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets">
@@ -394,5 +417,11 @@ var wpcf7 = {"apiSettings":{"root":"https:\/\/livewp.site\/wp\/md\/soho\/wp-json
 <script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/theme.js'></script>
 <script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-includes/js/wp-embed.min.js'></script>
 <script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/jquery.cookie.js'></script>
+
+<!-- Include controller -->
+<script src="js/angular-script.js"></script>
+
+
+
 </body>
 </html>
