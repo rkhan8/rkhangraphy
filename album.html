@@ -1,12 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en-US" class="fullscreen" ng-app="crudApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">    <link rel="shortcut icon" href="https://livewp.site/wp/md/soho/wp-content/themes/soho/img/favico.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://livewp.site/wp/md/soho/wp-content/themes/soho/img/apple_icons_57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://livewp.site/wp/md/soho/wp-content/themes/soho/img/apple_icons_72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://livewp.site/wp/md/soho/wp-content/themes/soho/img/apple_icons_114x114.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
+    
     <title>Rkhangraphy &raquo; Photo</title>
     <link rel="pingback" href="https://livewp.site/wp/md/soho/xmlrpc.php">
     <script type="text/javascript">
@@ -60,6 +57,10 @@ img.emoji {
 
 <!--include ANGULAR JS -->
 <script src="lib/angular/angular.min.js"></script>
+<script src="https://unpkg.com/@uirouter/angularjs@1.0.15/release/angular-ui-router.min.js"></script>
+
+<!-- Include controller -->
+<script src="js/angular-script.js"></script>
 
 
 
@@ -128,241 +129,15 @@ img.emoji {
             <div class="clear"></div>
 		<div class="clear"></div>
         </div><!-- Header Wrapper -->        
-	</header>
-   <div class="fullscreen_block" ng-controller="DbController">
-        <ul class="optionset" data-option-key="filter"><li class="selected"><a href="https://livewp.site/wp/md/soho/albums/" data-option-value="*">All Works</a>
-			</li><li ><a data-option-value=".events" href="https://livewp.site/wp/md/soho/albums/?slug=gallery-evetns" title="View all post filed under ">Events</a></li> <li ><a data-option-value=".people" href="https://livewp.site/wp/md/soho/albums/?slug=gallery-people" title="View all post filed under ">People</a></li> <li ><a data-option-value=".streets" href="https://livewp.site/wp/md/soho/albums/?slug=gallery-streets" title="View all post filed under ">Streets</a></li></ul>	    <div class="fs_blog_module is_masonry this_is_blog fs_filter">
-        <style>
-			.fullscreen_block {
-				padding:0;
-			}
-			.fullscreen_block .fs_filter {
-				padding:10px 0 0 10px;
-			}
-			.optionset li a {
-				color:#8b8e90;
-			}
-			.optionset li:before {
-				color:#bfc0c1;
-			}
-			.optionset li.selected a,
-			.optionset li a:hover {
-				color:#ef969a;
-			}			
-        </style>
-        
-        <div class="blogpost_preview_fw post-195 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets">
-            <div class="fw_preview_wrapper featured_items" ng-repeat="detail in details">
-                <div class="img_block wrapped_img">
-                    <a href="https://livewp.site/wp/md/soho/gallery/underground/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2017/11/17-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                </div>
-                <div class="bottom_box">
-                    <div class="bc_content">
-                        <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/underground/">{{detail.category}}</a></h5>
-                        <div class="featured_items_meta">
-                            <span class="preview_meta_data">{{detail.created_date}}</span>
-                            <span class="middot">&middot;</span>
-                            <span>{{detail.likes}}</span>                                    
-                        </div>									
-                    </div>
-                    <div class="bc_likes gallery_likes_add " data-attachid="195" data-modify="like_album">
-                        <i class="stand_icon icon-heart-o"></i>
-                        <span>8</span>
-                    </div>
-                </div>                                                
-            </div>
-        </div>            
-        
-        <!--
-				<div class="blogpost_preview_fw post-195 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/underground/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2017/11/17-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/underground/">Underground</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>11 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="195" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>8</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-216 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-people gallerycat-gallery-streets">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/trip-to-nyc/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2014/12/45-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/trip-to-nyc/">Trip to NYC (Video)</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>11 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="216" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>10</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-269 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/street-art/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2014/12/24-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/street-art/">Street Art</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>11 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="269" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>4</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-214 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-people gallerycat-gallery-streets">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/crowd/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2014/12/131-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/crowd/">Crowd</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>8 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="214" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>2</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-253 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-people">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/celebs/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2014/12/112-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/celebs/">Celebs</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>14 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="253" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>6</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-219 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-people">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/people-you-may-know/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2014/12/93-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/people-you-may-know/">People You May Know</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>16 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="219" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>2</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-218 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-evetns">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/events-photo-video/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2014/12/126-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/events-photo-video/">Events</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>6 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="218" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>3</span>
-                            </div>
-                        </div>                                                
-					</div>
-				</div>            
-
-                           
-				<div class="blogpost_preview_fw post-284 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets">
-					<div class="fw_preview_wrapper featured_items">
-                        <div class="img_block wrapped_img">
-                            <a href="https://livewp.site/wp/md/soho/gallery/streets/"><img src="https://livewp.site/wp/md/soho/wp-content/uploads/sites/6/2017/01/39-540x440.jpg" alt="" class="fw_featured_image" width="540"></a>
-                        </div>
-                        <div class="bottom_box">
-                            <div class="bc_content">
-                                <h5 class="bc_title"><a href="https://livewp.site/wp/md/soho/gallery/streets/">Streets</a></h5>
-                                <div class="featured_items_meta">
-                                    <span class="preview_meta_data">January 22, 2017</span>
-                                    <span class="middot">&middot;</span>
-									<span>7 pictures</span>                                    
-                                </div>									
-                            </div>
-                            <div class="bc_likes gallery_likes_add " data-attachid="284" data-modify="like_album">
-                                <i class="stand_icon icon-heart-o"></i>
-                                <span>2</span>
-                            </div>
-                        </div>                                                
-					</div>
-                </div>    
-        
-            -->
-
-                        <div class="clear"></div>
-        </div>
+    </header>
+    
+    <!-- SHOW UI -->
+    <div class="fullscreen_block" ng-controller="CtrlAlbum">
+        <div ui-view></div>
     </div>
-	    <script>
+
+
+    <script>
         jQuery(document).ready(function($){
             port_setup();
         });
@@ -377,7 +152,7 @@ img.emoji {
         }
     </script>
     
-            </div><!-- .main_wrapper -->
+    </div><!-- .main_wrapper -->
 	</div>
     <footer class="main_footer">
 	    <div class="copyright">RKhangraphy &copy;  All Rights Reserved.</div>
@@ -418,8 +193,7 @@ var wpcf7 = {"apiSettings":{"root":"https:\/\/livewp.site\/wp\/md\/soho\/wp-json
 <script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-includes/js/wp-embed.min.js'></script>
 <script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/jquery.cookie.js'></script>
 
-<!-- Include controller -->
-<script src="js/angular-script.js"></script>
+
 
 
 

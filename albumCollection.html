@@ -1,0 +1,58 @@
+<div ng-controller="CtrlPhotoPass">
+
+        <ul class="optionset" data-option-key="filter">
+                <li class="selected"><a href="album.html" data-option-value="*">All Works</a></li>
+                <li ng-repeat="album in albums">
+                    <a data-option-value=".events" href="" title="View all post filed under ">{{album.category}}</a>
+                </li> 
+    
+            </ul>	    
+            <div class="fs_blog_module is_masonry this_is_blog fs_filter">
+                <style>
+                    .fullscreen_block {
+                        padding:0;
+                    }
+                    .fullscreen_block .fs_filter {
+                        padding:10px 0 0 10px;
+                    }
+                    .optionset li a {
+                        color:#8b8e90;
+                    }
+                    .optionset li:before {
+                        color:#bfc0c1;
+                    }
+                    .optionset li.selected a,
+                    .optionset li a:hover {
+                        color:#ef969a;
+                    }			
+                </style>
+                
+                <div class="blogpost_preview_fw post-195 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets" ng-repeat="album in albums">
+                    <div class="fw_preview_wrapper featured_items" >
+                        <div class="img_block wrapped_img">
+                            <a href=""><img src="{{album.preview}}" alt="" class="fw_featured_image" width="540"></a>
+                        </div>
+                        <div class="bottom_box">
+                            <div class="bc_content">
+                                <h5 class="bc_title" ><a href="" ng-click="QueryCategory(album.category)">{{album.category}}</a></h5>
+                                <div class="featured_items_meta">
+                                    <span class="preview_meta_data">{{album.created_date}}</span>
+                                    <span class="middot">&middot;</span>
+                                    <span>NB of Pictures</span>                                    
+                                </div>									
+                            </div>
+                            <div class="bc_likes gallery_likes_add " data-attachid="195" data-modify="like_album">
+                                <i class="stand_icon icon-heart-o"></i>
+                                <span>{{album.likes}}</span>
+                            </div>
+                        </div>                                                
+                    </div>
+                </div>    
+                
+    
+    
+                <div class="clear"></div>
+            </div>
+
+</div>
+
