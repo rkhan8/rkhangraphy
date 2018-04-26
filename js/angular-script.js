@@ -70,9 +70,6 @@ angular.module('crudApp',['ui.router'])
 
 .controller("CtrlPhotoPass", function($location, $http, $scope, myFactory){
     
-    
-    
-    
     $scope.QueryCategory = function(data){
         myFactory.set(data);
         $location.path('/Photo');
