@@ -1,0 +1,91 @@
+<link rel='stylesheet' id='gt3_default_style-css'  href='css/style.css' type='text/css' media='all' />
+
+        <style>
+			.optionset li a,
+			.load_more_works {
+				color:#65686b;
+			}
+			.load_more_works span:before,
+			.load_more_works span:after {
+				background:#65686b;
+			}
+			.optionset li:before {
+				color:#2e3032;
+			}
+			.optionset li.selected a,
+			.optionset li a:hover,
+			.load_more_works:hover {
+				color:#b8bcc1;
+			}
+			.load_more_works:hover span:before,
+			.load_more_works:hover span:after {
+				background:#b8bcc1;
+			}
+			.fw-portPreview {
+				padding:0 0px 0px 0;
+			}
+        </style>
+        
+    <div ng-controller="CtrlSubCategory">
+
+        <div class="fullscreen_block fullscreen_portfolio without_padding"  >
+                <ul class="optionset" data-option-key="filter">
+                    <li class="selected"><a href="javascript:window.location.reload(true)" class="show_all" data-option-value="*">All Works</a></li>
+                    <li ng-repeat="subcategory in subcategories">
+                            <a data-option-value=".events" href="" title="View all post filed under " ng-click="QueryCategory(subcategory.subcategory)">{{subcategory.subcategory}}</a>
+                    </li> 
+                </ul>	    
+                
+
+                <div class="fs_blog_module fw_port_module2" style="padding-top:0px; margin-left:0px;" >
+
+                    <div class="blogpost_preview_fw element team  post-611 port type-port status-publish format-image has-post-thumbnail hentry portcat-team-striped" data-category="team " ng-repeat="subcategory in subcategories">
+                        <div class="fw-portPreview">
+                            <div class="img_block wrapped_img fs_port_item">
+                                <a class="featured_ico_link" href="https://livewp.site/wp/md/soho/portfolio/john-smith-about/" >
+                                    <img alt="" width="540" height="" ng-src="{{subcategory.preview}}" />
+                                </a>
+                                <div class="bottom_box">
+                                    <div class="bc_content">
+                                        <h5 class="bc_title"><a href="" ng-click="QuerySubCategory(subcategory.subcategory)">{{subcategory.subcategory}}</a></h5>
+                                        <div class="featured_items_meta">
+                                            <span>{{subcategory.created_date}}</span>
+                                            
+                                        </div>									
+                                    </div>
+                                    <div class="bc_likes gallery_likes_add " data-attachid="611" data-modify="like_port">
+                                        <i class="stand_icon icon-heart-o"></i>
+                                        <span>{{subcategory.likes}}</span>
+                                    </div>
+                                </div>
+                                <div class="portFadder"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                
+
+            </div>
+
+    </div>
+
+
+    
+   
+<div class="custom_bg img_bg" style="background-image: url(''); background-color:#0b0c0c;"></div>
+
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/chart.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/livewp.site\/wp\/md\/soho\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/plugins/contact-form-7/includes/js/scripts.js'></script>
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/jquery.mousewheel.js'></script>
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/theme.js'></script>
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-includes/js/wp-embed.min.js'></script>
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/jquery.cookie.js'></script>
+<script type='text/javascript' src='https://livewp.site/wp/md/soho/wp-content/themes/soho/js/jquery.isotope.min.js'></script>
+    
+</html>

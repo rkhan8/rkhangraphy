@@ -1,9 +1,10 @@
-<div ng-controller="CtrlPhotoPass">
+
+<div ng-controller="CtrlCategoryPass">
 
         <ul class="optionset" data-option-key="filter">
-                <li class="selected"><a href="album.html" data-option-value="*">All Works</a></li>
+                <li class="selected"><a href="javascript:window.location.reload(true)" data-option-value="*">All Works</a></li>
                 <li ng-repeat="album in albums">
-                    <a data-option-value=".events" href="" title="View all post filed under ">{{album.category}}</a>
+                    <a data-option-value=".events" href="" title="View all post filed under " ng-click="QueryCategory(album.category)">{{album.category}}</a>
                 </li> 
     
             </ul>	    
@@ -30,7 +31,7 @@
                 <div class="blogpost_preview_fw post-195 gallery type-gallery status-publish has-post-thumbnail hentry gallerycat-gallery-streets" ng-repeat="album in albums">
                     <div class="fw_preview_wrapper featured_items" >
                         <div class="img_block wrapped_img">
-                            <a href=""><img src="{{album.preview}}" alt="" class="fw_featured_image" width="540"></a>
+                            <a href=""><img ng-src="{{album.preview}}" alt="" class="fw_featured_image" width="540"></a>
                         </div>
                         <div class="bottom_box">
                             <div class="bc_content">
@@ -53,6 +54,9 @@
     
                 <div class="clear"></div>
             </div>
+
+            <div class="custom_bg img_bg" style="background-image: url(''); background-color:#0b0c0c;"></div>
+
 
 </div>
 
