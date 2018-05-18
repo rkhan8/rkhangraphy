@@ -57,15 +57,22 @@ angular.module('crudApp',['ui.router'])
 
 .controller("CtrlAlbum", function($location, $http, $scope){
     $location.path('/Album');
+    
     album();
 
     function album(){
         // Sending request to albumDetails.php files
         $http.post("databaseFiles/albumDetails.php", $scope.session).then(function(data, status) {
-            $scope.albums = data.data;
-            //console.log("Sucessfully getting data : " + JSON.stringify(data));
+
+            $scope.collections = data.data;
+            console.log(data.data);
+            if(data.data.includes("Connection failed"))
+            {
+                console.log("Connection error, check your configuration");
+            }
         });
     };
+    
 })
 
 
@@ -81,16 +88,13 @@ angular.module('crudApp',['ui.router'])
 
 .controller("CtrlSubCategory", function($location, $http, $scope, myCategory, mySubCategory){
 
-    $scope.category = myCategory.get();
-    
-    subCategory($scope.category);
+    $scope.photoset_id = myCategory.get();
+    subCategory($scope.photoset_id);
 
-    function subCategory(category){
-        // Sending request to albumDetails.php files
-        //console.log("Sucessfully getting category : " + JSON.stringify(category));
-
-        $http.post("databaseFiles/subCategoriesDetails.php", {"category": category},$scope.session).then(function(data, status) {
+    function subCategory(photoset_id){
+        $http.post("databaseFiles/subCategoriesDetails.php", {"photoset_id": photoset_id},$scope.session).then(function(data, status) {
             $scope.subcategories = data.data;
+            console.log(data.data);
         });
     };
 
@@ -124,5 +128,6 @@ angular.module('crudApp',['ui.router'])
 
     
 });
+
 
 

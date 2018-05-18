@@ -1,20 +1,48 @@
 <?php
-// Including database connections
-require_once 'database_connection.php';
+
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: Origin, Content-Type, Authorization, X-Auth-Token');
+header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS');
+
+require_once 'ApiFlickr.php';
+$database = _DBConnectApi();
+
 //fetch data passed
 $data = json_decode(file_get_contents("php://input"));
 //store data
-$category = mysqli_real_escape_string($con, $data->category);
+$photosetid = $data->photoset_id;
 
-// mysqli query to fetch all data from database
-$query = "SELECT * from subcategories where category = '$category'";
-$result = mysqli_query($con, $query);
-$arr = array();
-if(mysqli_num_rows($result) != 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-        $arr[] = $row;
-    }
+
+$flickPhotosetsGetPhotos = _flickPhotosetsGetPhotos($database, $photosetid);
+$data_flickPhotosetsGetPhotos= $flickPhotosetsGetPhotos;
+
+//GET photoset info
+$encode_flickPhotosetsGetPhotos = json_encode($data_flickPhotosetsGetPhotos['photoset']['photo']);
+$decode_flickPhotosetsGetPhotos = json_decode($encode_flickPhotosetsGetPhotos);
+
+//SET ARRAY COLLECTION DATA
+$collection = array();
+
+//EXPLORE PHOTOSETINFO AND GET URL IMAGE
+foreach($decode_flickPhotosetsGetPhotos as $data){
+
+   $flickShowPhoto = _flickShowPhoto($database, $data->id);
+   $flickShowPhoto_data = $flickShowPhoto;
+   
+   $encode_show_flickr_photo = json_encode($flickShowPhoto_data['sizes']['size'][11]);
+   $decode_show_flickr_photo = json_decode($encode_show_flickr_photo);
+   
+
+   //JSON SCHEMA DATA
+   $title = $data->title;
+   $url =  $decode_show_flickr_photo->source;
+
+   $collection[] = array("title" => $title,"url" => $url);
+
 }
-// Return json array containing data from the databasecon
-echo $json_info = json_encode($arr);
+
+echo json_encode($collection);
+
+
+
 ?>
