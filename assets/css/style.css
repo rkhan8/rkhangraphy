@@ -477,7 +477,8 @@ footer .post-list li em {
 }
 .navbar-brand {
     padding: 0;
-    padding-top: 27px;
+    padding-top: 17px;
+    padding-bottom: 17px;    
 }
 .navbar-brand img {
     -webkit-transition: all 0.3s;
@@ -487,7 +488,7 @@ footer .post-list li em {
     transition: all 0.3s;
     -webkit-transform: translateZ();
     image-rendering: -webkit-optimize-contrast;
-    height: 25px;
+    height: 85px;
     width: inherit;
 }
 .navbar-header {
@@ -623,14 +624,15 @@ footer .post-list li em {
     padding-top: 19px
 }
 .navbar.fixed .navbar-brand img {
-    height: 20px !important;
+    height: 58px !important;
     width: auto !important;
 }
 .navbar.fixed .navbar-nav > li > a {
     padding: 19px 14px
 }
 .navbar .navbar-collapse {
-    max-height: inherit
+    max-height: inherit;
+    padding-top: 20px;
 }
 /*-----------------------------------------------------------------------------------*/
 /*	05. DIVIDERS
