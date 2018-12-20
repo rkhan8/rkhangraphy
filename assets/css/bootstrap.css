@@ -744,7 +744,7 @@ pre code {
     width: 750px;
   }
 }
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .container {
     width: 970px;
   }
@@ -753,7 +753,12 @@ pre code {
   .container {
     width: 1170px;
   }
-}
+} */
+  .container {
+    width: 85%;
+  }
+
+
 .container-fluid {
   padding-right: 15px;
   padding-left: 15px;
