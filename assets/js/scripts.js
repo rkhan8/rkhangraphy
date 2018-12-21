@@ -75,10 +75,18 @@ $(document).ready(function() {
 /*-----------------------------------------------------------------------------------*/
 /*	INSTAGRAM
 /*-----------------------------------------------------------------------------------*/
+
+curl -F 'client_id=CLIENT_ID' \
+-F 'client_secret=CLIENT_SECRET' \
+-F 'grant_type=authorization_code' \
+-F 'redirect_uri=AUTHORIZATION_REDIRECT_URI' \
+-F 'code=CODE' \
+https://api.instagram.com/oauth/access_token
+
 var instagramFeed = new Instafeed({
         get: 'user',
-        userId: 1215763826,
-        accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
+        userId: 13872296,
+        accessToken: '927cb0102c81475aad1558bf2c64c71c',
         resolution: 'low_resolution',
         template: '<div class="item"><figure><img src="{{image}}" /><a href="{{link}}" class="ins-link" target="_blank"><i class="icon-link"></i></a></figure></div>',
         after: function () {    
