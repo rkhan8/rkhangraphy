@@ -1,5 +1,5 @@
 // Application module
-angular.module('crudApp',['ui.router'])
+angular.module('angulApp',['ui.router'])
 
 .factory('myCategory', function(){
     var savedData = {};
@@ -40,9 +40,9 @@ angular.module('crudApp',['ui.router'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
-    .state('Album', {
-        url: '/Album',
-        templateUrl: 'albumCollection.html'
+    .state('Index', {
+        url: '/Index',
+        templateUrl: 'index.html'
     })
     .state('Subcategory', {
         url: '/Subcategory',
@@ -56,15 +56,18 @@ angular.module('crudApp',['ui.router'])
 })
 
 .controller("CtrlAlbum", function($location, $http, $scope){
-    $location.path('/Album');
+    $location.path('/Index');
     
     album();
 
     function album(){
         // Sending request to albumDetails.php files
-        $http.post("databaseFiles/albumDetails.php", $scope.session).then(function(data, status) {
+        $http.post("../databaseFiles/albumDetails.php", $scope.session).then(function(data, status) {
 
             $scope.collections = data.data;
+
+            console.log(data.data);
+
             console.log(data.data);
             if(data.data.includes("Connection failed"))
             {
