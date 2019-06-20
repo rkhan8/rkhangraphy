@@ -76,9 +76,12 @@ $(document).ready(function() {
 /*	INSTAGRAM
 /*-----------------------------------------------------------------------------------*/
 var instagramFeed = new Instafeed({
+        target: 'instagramFeed',
         get: 'user',
-        userId: 13872296,
-        accessToken: '927cb0102c81475aad1558bf2c64c71c',
+        // userId: 1215763826,
+        // accessToken: '1215763826.f1627ea.512d3a9b334a4c91ac2e83d4f4d9b291',
+        userId: 6099846681,
+        accessToken: '6099846681.efdd41a.2b305012048248d182965ca319c5028c',
         resolution: 'low_resolution',
         template: '<div class="item"><figure><img src="{{image}}" /><a href="{{link}}" class="ins-link" target="_blank"><i class="icon-link"></i></a></figure></div>',
         after: function () {    
@@ -106,7 +109,7 @@ var instagramFeed = new Instafeed({
 		  }
     });
     
-    $('#instafeed').each(function() {
+    $('#instagramFeed').each(function() {
     instagramFeed.run();
 });
 

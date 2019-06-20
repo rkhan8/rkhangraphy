@@ -1791,7 +1791,6 @@ figure a img {
 figure img {
     display: block;
     /* max-width: 100%; */
-    height: 300px;
 }
 figure a .text-overlay {
     opacity: 0;
