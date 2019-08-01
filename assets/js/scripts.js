@@ -83,6 +83,8 @@ var instagramFeed = new Instafeed({
         userId: 6099846681,
         accessToken: '6099846681.efdd41a.2b305012048248d182965ca319c5028c',
         resolution: 'low_resolution',
+        sortBy: 'most-recent',
+        limit: 5,
         template: '<div class="item"><figure><img src="{{image}}" /><a href="{{link}}" class="ins-link" target="_blank"><i class="icon-link"></i></a></figure></div>',
         after: function () {    
 		    $('.swiper-container.instagram').each(function(){
@@ -326,38 +328,80 @@ jQuery('.fullscreenbanner').revolution(
 /*-----------------------------------------------------------------------------------*/
 /*	FLICKR
 /*-----------------------------------------------------------------------------------*/	
+// $(document).ready(function($){
+// 	$('.flickr-feed').dcFlickr({
+// 		// limit: 15, 
+//         q: { 
+//             id: '161481192@N02',
+// 			lang: 'en-us',
+// 			format: 'json',
+// 			jsoncallback: '?'
+//         },
+// 		onLoad: function(){
+// 			$('.swiper-container.flickr').each(function(){
+// 		  $(this).swiper({
+// 		     grabCursor: true,
+// 		    slidesPerView: 'auto',
+// 		    wrapperClass: 'swiper',
+// 		    slideClass: 'item'
+// 		  });
+		
+// 		  var $swipers = $(this);
+		
+// 		  $swipers.siblings('.arrow-left').click(function(e){
+// 		   e.preventDefault();
+// 		   $swipers.data('swiper').swipePrev();
+// 		  });
+// 		  $swipers.siblings('.arrow-right').click(function(e){
+// 		   e.preventDefault();
+// 		   $swipers.data('swiper').swipeNext();
+// 		  });
+// 		});
+// 		}
+// 	});
+// });	
+
 $(document).ready(function($){
-	$('.flickr-feed').dcFlickr({
-		limit: 15, 
-        q: { 
-            id: '51789731@N07',
-			lang: 'en-us',
-			format: 'json',
-			jsoncallback: '?'
-        },
+	// $('.flickr-feed').dcFlickr({
+	// 	// limit: 15, 
+    //     q: { 
+    //         id: '161481192@N02',
+	// 		lang: 'en-us',
+	// 		format: 'json',
+	// 		jsoncallback: '?'
+    //     },
+	// 	onLoad: function(){
+	// 		$('.swiper-container.flickr').each(function(){
+	// 	  $(this).swiper({
+	// 	     grabCursor: true,
+	// 	    slidesPerView: 'auto',
+	// 	    wrapperClass: 'swiper',
+	// 	    slideClass: 'item'
+	// 	  });
+		
+	// 	  var $swipers = $(this);
+		
+	// 	  $swipers.siblings('.arrow-left').click(function(e){
+	// 	   e.preventDefault();
+	// 	   $swipers.data('swiper').swipePrev();
+	// 	  });
+	// 	  $swipers.siblings('.arrow-right').click(function(e){
+	// 	   e.preventDefault();
+	// 	   $swipers.data('swiper').swipeNext();
+	// 	  });
+	// 	});
+	// 	}
+	// });
+    
+    $('.flickr-feed-album').dcFlickrAlbum({
 		onLoad: function(){
 			$('.swiper-container.flickr').each(function(){
-		  $(this).swiper({
-		     grabCursor: true,
-		    slidesPerView: 'auto',
-		    wrapperClass: 'swiper',
-		    slideClass: 'item'
-		  });
-		
-		  var $swipers = $(this);
-		
-		  $swipers.siblings('.arrow-left').click(function(e){
-		   e.preventDefault();
-		   $swipers.data('swiper').swipePrev();
-		  });
-		  $swipers.siblings('.arrow-right').click(function(e){
-		   e.preventDefault();
-		   $swipers.data('swiper').swipeNext();
-		  });
-		});
+
+            });
 		}
 	});
 });	
+
 /*-----------------------------------------------------------------------------------*/
 /*	FANCYBOX
 /*-----------------------------------------------------------------------------------*/
