@@ -1,0 +1,28 @@
+#portfolio-filter button{
+	transition: 0.3s;
+	color: rgba(255,255,255,0.77);
+	background-color: #222222;
+	border: hidden;
+	font-weight: 600;
+}
+
+#portfolio-filter button:hover{
+	transition: 0.3s;
+	color: white;
+}
+
+#portfolio-filter .active{
+	transition: 0.3s;
+	color: #28b8d8;
+}
+
+.column {
+	display: inline-block;
+	height: 30%;
+	width: 30%;
+	padding: 0.2%;
+}
+
+.flickr-feed-portfolio-filter{
+	display: contents;
+}

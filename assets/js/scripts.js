@@ -395,9 +395,19 @@ $(document).ready(function($){
     
     $('.flickr-feed-album').dcFlickrAlbum({
 		onLoad: function(){
-			$('.swiper-container.flickr').each(function(){
 
-            });
+		}
+    });
+
+    $('.flickr-feed-portfolio-filter').dcFlickrPortfolioFilter({
+		onLoad: function(){
+
+		}
+	});
+    
+    $('.flickr-feed-portfolio').dcFlickrPortfolio({
+		onLoad: function(){
+
 		}
 	});
 });	

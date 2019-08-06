@@ -40,30 +40,27 @@ function method_flickr_photosets_getList(){
 	return flickr_json_object(url);
 }
 
-// function method_flickr_photos_getInfo(photo_id, secret){
-// //get photo info
-// 	//exemple : https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&
-// 	//api_key=47d5e17b65350f9ef04d5ff26b6d865e&photo_id=41475168244&secret=40c24a60c4
-// 	var defaults = {
-// 		base: 'https://api.flickr.com/services/rest/',
-// 		method: 'method=flickr.photos.getInfo',
-// 		q: {
-// 			api_key: '47d5e17b65350f9ef04d5ff26b6d865e',
-// 			photo_id: photo_id,
-// 			secret : secret, 
-// 			format : 'json'		
-// 		}
-// 	};
+function method_flickr_photosets_getPhotos(photoset_id){
+	var defaults = {
+		base: 'https://api.flickr.com/services/rest/',
+		method: 'method=flickr.photosets.getPhotos',
+		q: {
+			api_key: '47d5e17b65350f9ef04d5ff26b6d865e',
+			user_id: '161481192@N02', 
+			format : 'json',
+			photoset_id : photoset_id		
+		}
+	};
 
-// 	var url = defaults.base + '?' + defaults.method;
+	var url = defaults.base + '?' + defaults.method;
 
-// 	for(var key in defaults.q){			
-// 		url += '&';
-// 		url += key + '=' + defaults.q[key];
-// 	}
+	for(var key in defaults.q){			
+		url += '&';
+		url += key + '=' + defaults.q[key];
+	}
 
-// 	return flickr_json_object(url);
-// }
+	return flickr_json_object(url);
+}
 
 function get_image(farm_id,server_id, photo_id, o_secret){
 
@@ -79,64 +76,6 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 
 (function($){
 
-		//exemple of flickr feed
-	// 	$.fn.dcFlickr = function(options) {
-	// 	//set default options
-	// 	var defaults = {
-	// 		base: 'http://api.flickr.com/services/feeds/',
-	// 		api: 'photos_public.gne',
-	// 		limit: 20,
-	// 		q: {
-	// 			lang: 'en-us',
-	// 			format: 'json',
-	// 			jsoncallback: '?'
-	// 		},
-	// 		onLoad : function() {}
-	// 	};
-
-	// 	//call the default otions
-	// 	var options = $.extend(defaults, options);
-	// 	var url = defaults.base + defaults.api + '?';
-	// 	var qfirst = true;
-
-	// 	for(var key in defaults.q){
-	// 		if(!qfirst)
-	// 			url += '&';
-	// 		url += key + '=' + defaults.q[key];
-	// 		qfirst = false;
-	// 	}
-		
-	// 	var $dcFlickr = this;
-
-	// 	return $dcFlickr.each(function(options){
-
-	// 		var htmlString = "";
-	// 		limit = defaults.limit;
-		
-	// 		$.getJSON(url, function(data){
-			
-	// 			// Cycle each flickr image
-	// 			$.each(data.items, function(i,item){
-	// 				if(i < limit){
-	// 					// var source = item.media.m.replace(/_m\.jpg$/, ".jpg");
-	// 					var sourceSquare = (item.media.m).replace('_m.jpg', '_q.jpg');
-	// 					htmlString += '<div class="item"><figure>';
-	// 					htmlString += '<img src="' + sourceSquare + '" alt="" />';
-	// 					htmlString += '<a href="' + item.link + '" target="_blank" class="fli-link"><i class="icon-link"></i></a></figure></div>';
-	// 				}
-	// 			});
-			   
-	// 			// append html to object
-	// 			$dcFlickr.html(htmlString);
-				
-	// 		}).success(function() {
-	// 			// onLoad callback;
-	// 			defaults.onLoad.call(this);
-	// 		});
-	// 	});
-	// };
-
-
 	$.fn.dcFlickrAlbum = function() {
 
 		//Get album info 
@@ -145,28 +84,92 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 
 		var $dcFlickrAlbum = this;
 
-		return $dcFlickrAlbum.each(function(options){
-			var htmlString = "";
-
-			$.each(album.photosets.photoset, function(i,item){					
-
-					// htmlString += '<img src="' + get_image(item.farm,item.server,item.primary, item.secret) + '" alt="" />';
-				console.log(item);
-				htmlString +='<div class="col-sm-4"><div class="post bordered">';
-				htmlString += '<h3 class="post-title text-center"><a href="#">'+item.title._content+'</a></h3>';
-				htmlString += '<div class="meta text-center"><span class="categories">Photos: '+item.photos+', Videos: '+item.videos+'</a></span></div>';
-				htmlString += '<figure class="full"><a href="#"><div class="text-overlay"><div class="info">Show album</div></div>';
-				htmlString += '<img src="'+get_image(item.farm,item.server,item.primary, item.secret)+'" alt="" /></a></figure>';
-				htmlString += '<div class="post-content"><div class="footer-meta"><span><img src="assets/img/views-icon.png" style="height:5%; width:5%; margin-right: 3px;"/>'+ item.count_views+'</span></div></div>';
-				htmlString += '</div></div>';
+		if(album.stat == 'fail'){
+			alert("Due to a technical problem, it is impossibe for the moment to browse into portfolio. This issue will be fixed soon.\nThank you !");
+		}
+		else{
+			return $dcFlickrAlbum.each(function(options){
+				var htmlString = "";	
+				$.each(album.photosets.photoset, function(i,item){					
+	
+					console.log(item);
+					htmlString +='<div class="col-sm-4"><div class="post bordered">';
+					htmlString += '<h3 class="post-title text-center"><a href="#">'+item.title._content+'</a></h3>';
+					htmlString += '<div class="meta text-center"><span class="categories">Photos: '+item.photos+', Videos: '+item.videos+'</a></span></div>';
+					htmlString += '<figure class="full"><a href="#"><div class="text-overlay"><div class="info">Show album</div></div>';
+					htmlString += '<img src="'+get_image(item.farm,item.server,item.primary, item.secret)+'" alt="" /></a></figure>';
+					htmlString += '<div class="post-content"><div class="footer-meta"><span><img src="assets/img/views-icon.png" style="height:5%; width:5%; margin-right: 3px;"/>'+ item.count_views+'</span></div></div>';
+					htmlString += '</div></div>';
+				});
+			
+				// append html to object
+				$dcFlickrAlbum.html(htmlString);
+	
 			});
-		
-			// append html to object
-			$dcFlickrAlbum.html(htmlString);
-
-		});
-
+		}
 	};
+
+	$.fn.dcFlickrPortfolioFilter = function() {
+
+		//Get album info 
+		var json_album = method_flickr_photosets_getList();
+		let album = new Album(json_album.photosets, json_album.stat);
+
+		var $dcFlickrAlbum = this;
+		var htmlString = "";	
+
+
+		if(album.stat == 'fail'){
+			alert("Due to a technical problem, it is impossibe for the moment to browse into portfolio. This issue will be fixed soon.\nThank you !");
+		}
+		else{
+			htmlString +='<button class="filter all" onclick="filterSelection(\'all\', all)">View All</button>';				
+			return $dcFlickrAlbum.each(function(options){
+				$.each(album.photosets.photoset, function(i,item){	
+					htmlString +='<button class="filter '+i+'" onclick="filterSelection(\''+item.title._content+'\', '+i+')">'+item.title._content+'</button>';
+				});
+			
+				// append html to object
+				$dcFlickrAlbum.html(htmlString);
+	
+			});
+		}
+	};
+
+	$.fn.dcFlickrPortfolio = function(){
+		//Get album info 
+		var json_album = method_flickr_photosets_getList();
+		let album = new Album(json_album.photosets, json_album.stat);
+
+		var $dcFlickrPortfolio = this;
+
+		if(album.stat == 'fail'){
+			alert("Due to a technical problem, it is impossibe for the moment to browse into portfolio. This issue will be fixed soon.\nThank you !");
+		}
+		else{
+			return $dcFlickrPortfolio.each(function(options){
+				var htmlString = "";	
+				$.each(album.photosets.photoset, function(i,albums){					
+	
+					var json_gallery = method_flickr_photosets_getPhotos(albums.id);
+					let gallery = new Gallery(json_gallery.photoset, json_gallery.stat);
+
+					$.each(gallery.photoset.photo, function(j, gallerie){
+
+						htmlString += '<div class="column '+albums.title._content+' ">';
+						htmlString += '<div class="content">';
+						htmlString += '<img src="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'" style="width:100%"></div></div>';
+
+					});
+
+				});
+			
+				// append html to object
+				$dcFlickrPortfolio.html(htmlString);
+	
+			});
+		}
+	}
 
 
 
