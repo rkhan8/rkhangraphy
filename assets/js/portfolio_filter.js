@@ -26,10 +26,6 @@ function filterSelection(title, position){
                 filter.addClass('active');
             }
 
-        
-        
-        
-
     })
 
     

@@ -65,8 +65,21 @@ function method_flickr_photosets_getPhotos(photoset_id){
 function get_image(farm_id,server_id, photo_id, o_secret){
 
 	//image URL
+// s	petit carré 75x75
+// q	large square 150x150
+// t	miniature, côté le plus long de 100
+// m	petit, côté le plus long de 240
+// n	small, 320 on longest side
+// -	moyen, côté le plus long de 500
+// z	Moyen 640, côté le plus long de 640
+// c	moyen 800, 800 sur la longueur†
+// b	grand, côté le plus long de 1 024*
+// h	largeur 1 600, longueur 1 600†
+// k	largeur 2 048, longueur 2 048†
+// o	image d'origine, jpg, gif ou png selon le format source
+
 	//query https://www.flickr.com/services/api/misc.urls.html
-	var url = 'https://farm'+farm_id+'.staticflickr.com/'+server_id+'/'+photo_id+'_'+o_secret+'_b.png';
+	var url = 'https://farm'+farm_id+'.staticflickr.com/'+server_id+'/'+photo_id+'_'+o_secret+'_c.png';
 	return url;
 
 }
@@ -123,7 +136,7 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 			alert("Due to a technical problem, it is impossibe for the moment to browse into portfolio. This issue will be fixed soon.\nThank you !");
 		}
 		else{
-			htmlString +='<button class="all" onclick="filterSelection(\'all\', \'all\')">View All</button>';				
+			htmlString +='<button class="all active" onclick="filterSelection(\'all\', \'all\')">View All</button>';				
 			return $dcFlickrAlbum.each(function(options){
 				$.each(album.photosets.photoset, function(i,item){	
 					htmlString +='<button class="'+i+'" onclick="filterSelection(\''+item.title._content+'\', '+i+')">'+item.title._content+'</button>';
@@ -157,8 +170,9 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 					$.each(gallery.photoset.photo, function(j, gallerie){
 
 						htmlString += '<div class="column '+albums.title._content+' ">';
-						htmlString += '<div class="content">';
-						htmlString += '<img src="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'" style="width:100%"></div></div>';
+						htmlString += '<div class="content zoom-gallery">';
+						htmlString += '<a href="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'">';
+						htmlString += '<img src="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'" style="width:100%"></a></div></div>';
 
 					});
 
