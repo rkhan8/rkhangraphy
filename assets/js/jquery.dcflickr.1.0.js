@@ -123,10 +123,10 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 			alert("Due to a technical problem, it is impossibe for the moment to browse into portfolio. This issue will be fixed soon.\nThank you !");
 		}
 		else{
-			htmlString +='<button class="filter all" onclick="filterSelection(\'all\', all)">View All</button>';				
+			htmlString +='<button class="all" onclick="filterSelection(\'all\', \'all\')">View All</button>';				
 			return $dcFlickrAlbum.each(function(options){
 				$.each(album.photosets.photoset, function(i,item){	
-					htmlString +='<button class="filter '+i+'" onclick="filterSelection(\''+item.title._content+'\', '+i+')">'+item.title._content+'</button>';
+					htmlString +='<button class="'+i+'" onclick="filterSelection(\''+item.title._content+'\', '+i+')">'+item.title._content+'</button>';
 				});
 			
 				// append html to object

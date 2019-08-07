@@ -4,6 +4,16 @@
 	background-color: #222222;
 	border: hidden;
 	font-weight: 600;
+	text-transform: uppercase;
+	margin-left: 5%;
+}
+
+#portfolio-filter ul{
+	padding: 2% 2%;
+	margin-left: 60%;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
 }
 
 #portfolio-filter button:hover{
