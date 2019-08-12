@@ -170,9 +170,9 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 					$.each(gallery.photoset.photo, function(j, gallerie){
 
 						htmlString += '<div class="column '+albums.title._content+' ">';
-						htmlString += '<div class="content zoom-gallery">';
-						htmlString += '<a href="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'">';
-						htmlString += '<img src="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'" style="width:100%"></a></div></div>';
+						htmlString += '<figure class="full"><div class="content zoom-gallery">';
+						htmlString += '<a href="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'"><div class="text-overlay"><div class="info">view</div></div>';
+						htmlString += '<img src="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'" style="width:100%"></a></div></figure></div>';
 
 					});
 

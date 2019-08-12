@@ -516,12 +516,14 @@ footer .post-list li em {
     margin-left: 15px
 }
 .navbar-nav > li > a {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    font-family: 'Open Sans';
+    font-size: 13px;
+    font-weight: 600;
     text-transform: uppercase;
     color: #f5f5f5;
     padding: 30px 14px;
+    letter-spacing: 1px;
 }
 .nav > li > a:focus {
     background: none;
