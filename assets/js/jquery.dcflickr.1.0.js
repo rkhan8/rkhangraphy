@@ -105,11 +105,10 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 				var htmlString = "";	
 				$.each(album.photosets.photoset, function(i,item){					
 	
-					console.log(item);
 					htmlString +='<div class="col-sm-4"><div class="post bordered">';
 					htmlString += '<h3 class="post-title text-center"><a href="#">'+item.title._content+'</a></h3>';
 					htmlString += '<div class="meta text-center"><span class="categories">Photos: '+item.photos+', Videos: '+item.videos+'</a></span></div>';
-					htmlString += '<figure class="full"><a href="#"><div class="text-overlay"><div class="info">Show album</div></div>';
+					htmlString += '<figure class="full"><a href="portfolio.html"><div class="text-overlay"><div class="info">Show album</div></div>';
 					htmlString += '<img src="'+get_image(item.farm,item.server,item.primary, item.secret)+'" alt="" /></a></figure>';
 					htmlString += '<div class="post-content"><div class="footer-meta"><span><img src="assets/img/views-icon.png" style="height:5%; width:5%; margin-right: 3px;"/>'+ item.count_views+'</span></div></div>';
 					htmlString += '</div></div>';
@@ -171,7 +170,7 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 
 						htmlString += '<div class="column '+albums.title._content+' ">';
 						htmlString += '<figure class="full"><div class="content zoom-gallery">';
-						htmlString += '<a href="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'"><div class="text-overlay"><div class="info">view</div></div>';
+						htmlString += '<a href="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'"><div class="text-overlay"><div class="info"><img src="assets/img/picture.png"></div></div>';
 						htmlString += '<img src="'+get_image(gallerie.farm,gallerie.server,gallerie.id, gallerie.secret)+'" style="width:100%"></a></div></figure></div>';
 
 					});
