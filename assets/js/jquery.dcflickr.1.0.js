@@ -107,10 +107,9 @@ function get_image(farm_id,server_id, photo_id, o_secret){
 	
 					htmlString +='<div class="col-sm-4"><div class="post bordered">';
 					htmlString += '<h3 class="post-title text-center"><a href="#">'+item.title._content+'</a></h3>';
-					htmlString += '<div class="meta text-center"><span class="categories">Photos: '+item.photos+', Videos: '+item.videos+'</a></span></div>';
 					htmlString += '<figure class="full"><a href="portfolio.html"><div class="text-overlay"><div class="info">Show album</div></div>';
 					htmlString += '<img src="'+get_image(item.farm,item.server,item.primary, item.secret)+'" alt="" /></a></figure>';
-					htmlString += '<div class="post-content"><div class="footer-meta"><span><img src="assets/img/views-icon.png" style="height:5%; width:5%; margin-right: 3px;"/>'+ item.count_views+'</span></div></div>';
+					htmlString += '<div class="post-content"><div class="meta text-center"><span class="categories">Photos: '+item.photos+', Videos: '+item.videos+'</span></div></div>';
 					htmlString += '</div></div>';
 				});
 			
