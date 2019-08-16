@@ -327,71 +327,8 @@ jQuery('.fullscreenbanner').revolution(
 });
 /*-----------------------------------------------------------------------------------*/
 /*	FLICKR
-/*-----------------------------------------------------------------------------------*/	
-// $(document).ready(function($){
-// 	$('.flickr-feed').dcFlickr({
-// 		// limit: 15, 
-//         q: { 
-//             id: '161481192@N02',
-// 			lang: 'en-us',
-// 			format: 'json',
-// 			jsoncallback: '?'
-//         },
-// 		onLoad: function(){
-// 			$('.swiper-container.flickr').each(function(){
-// 		  $(this).swiper({
-// 		     grabCursor: true,
-// 		    slidesPerView: 'auto',
-// 		    wrapperClass: 'swiper',
-// 		    slideClass: 'item'
-// 		  });
-		
-// 		  var $swipers = $(this);
-		
-// 		  $swipers.siblings('.arrow-left').click(function(e){
-// 		   e.preventDefault();
-// 		   $swipers.data('swiper').swipePrev();
-// 		  });
-// 		  $swipers.siblings('.arrow-right').click(function(e){
-// 		   e.preventDefault();
-// 		   $swipers.data('swiper').swipeNext();
-// 		  });
-// 		});
-// 		}
-// 	});
-// });	
-
+/*-----------------------------------------------------------------------------------*/		
 $(document).ready(function($){
-	// $('.flickr-feed').dcFlickr({
-	// 	// limit: 15, 
-    //     q: { 
-    //         id: '161481192@N02',
-	// 		lang: 'en-us',
-	// 		format: 'json',
-	// 		jsoncallback: '?'
-    //     },
-	// 	onLoad: function(){
-	// 		$('.swiper-container.flickr').each(function(){
-	// 	  $(this).swiper({
-	// 	     grabCursor: true,
-	// 	    slidesPerView: 'auto',
-	// 	    wrapperClass: 'swiper',
-	// 	    slideClass: 'item'
-	// 	  });
-		
-	// 	  var $swipers = $(this);
-		
-	// 	  $swipers.siblings('.arrow-left').click(function(e){
-	// 	   e.preventDefault();
-	// 	   $swipers.data('swiper').swipePrev();
-	// 	  });
-	// 	  $swipers.siblings('.arrow-right').click(function(e){
-	// 	   e.preventDefault();
-	// 	   $swipers.data('swiper').swipeNext();
-	// 	  });
-	// 	});
-	// 	}
-	// });
     
     $('.flickr-feed-album').dcFlickrAlbum({
 		onLoad: function(){

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/img/rkhangraphyLogoHome.png">
+<title>Rkhangraphy</title>
+<!-- Bootstrap core CSS -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/settings.css" rel="stylesheet">
+<link href="assets/css/prettify.css" rel="stylesheet">
+<link href="assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all" />
+<link href="assets/css/jquery.fancybox-thumbs.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/style.css" rel="stylesheet">
+<link href="assets/css/aqua.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700%2C800%2C300italic%2C400italic%2C600italic%2C700italic%2C800italic&ver=4.0.26' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700italic,700,900,900italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' rel='stylesheet' type='text/css'>
+<link href="assets/css/fontello.css" rel="stylesheet">
+<link href="assets/css/budicons.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="style/js/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+<div class="body-wrapper">
+  <div class="navbar">
+    <div class="navbar-header">
+      <div class="container">
+            <div class="basic-wrapper"> <a class="btn responsive-menu pull-right" data-toggle="collapse" data-target=".navbar-collapse"><i class='icon-menu-1'></i></a> <a class="navbar-brand" href="index.html"><img src="assets/img/rkhangraphyLogoHome.png" alt="" data-src="assets/img/rkhangraphyLogoHome.png" data-ret="assets/img/rkhangraphyLogoHome.png" class="retina" /></a> </div>
+            <nav class="collapse navbar-collapse pull-right">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a href="index.html" class="dropdown-toggle js-activated">Home</a>
+                    </li>
+                    <li class="dropdown"><a href="portfolio.html" class="dropdown-toggle js-activated">Portfolio</a>
+                    </li>
+                    <li class="dropdown"><a href="about.html" class="dropdown-toggle js-activated">About</a>
+                    </li>
+                    <li class="dropdown"><a href="contact.html" class="dropdown-toggle js-activated">Contact</a>
+                    </li>
+                </ul>
+                <ul class="social pull-right">
+                    <li><a href="https://www.instagram.com/raihan_khan_photography/?hl=fr-ca"><i class="icon-s-instagram"></i></a></li>
+                    <li><a href="https://www.flickr.com/photos/161481192@N02/albums"><i class="icon-s-flickr"></i></a></li>
+                    <li><a href="https://www.facebook.com/rkhangraphy/"><i class="icon-s-facebook"></i></a></li>
+                </ul>
+            </nav>
+      </div>
+    </div>
+    <!--/.nav-collapse --> 
+  </div>
+  <!--/.navbar -->
+  <div class="map">
+    <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?source=embed&amp;msid=207252500814404613616.0004dbcb6e23f7b275953&amp;msa=0&amp;ie=UTF8&amp;ll=46.8145796,-71.2245827&amp;spn=0.020836,0.066047&amp;t=m&amp;z=15&amp;output=embed"></iframe>
+  </div>
+  <div class="light-wrapper">
+    <div class="container inner">
+                
+          <div class="row">
+              <div class="col-sm-8">
+                  <h1 class="post-title">Feel Free to Drop Me a Line</h1>
+                  <p>Maecenas vehicula condimentum consequat. Ut suscipit ipsum eget leotero convallis feugiat upsoyut fermentum leo auctor consequat turpis aturo nisiper. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis.</p>
+                  <div class="divide20"></div>
+                  <div class="form-container">
+                  <div class="response alert alert-success"></div>
+                  <form class="forms" action="contact/form-handler.php" method="post">
+                      <fieldset>
+                      <ol>
+                          <li class="form-row text-input-row name-field">
+                          <input type="text" name="name" class="text-input defaultText required" title="Name (Required)"/>
+                          </li>
+                          <li class="form-row text-input-row email-field">
+                          <input type="text" name="email" class="text-input defaultText required email" title="Email (Required)"/>
+                          </li>
+                          <li class="form-row text-input-row subject-field">
+                          <input type="text" name="subject" class="text-input defaultText" title="Subject"/>
+                          </li>
+                          <li class="form-row text-area-row">
+                          <textarea name="message" class="text-area required"></textarea>
+                          </li>
+                          <li class="form-row hidden-row">
+                          <input type="hidden" name="hidden" value="" />
+                          </li>
+                          <li class="nocomment">
+                          <label for="nocomment">Leave This Field Empty</label>
+                          <input id="nocomment" value="" name="nocomment" />
+                          </li>
+                          <li class="button-row">
+                          <input type="submit" value="Submit" name="submit" class="btn btn-submit bm0" />
+                          </li>
+                      </ol>
+                      <input type="hidden" name="v_error" id="v-error" value="Required" />
+                      <input type="hidden" name="v_email" id="v-email" value="Enter a valid email" />
+                      </fieldset>
+                  </form>
+                  </div>
+                  <!-- /.form-container --> 
+              </div>
+              <!-- /.span8 -->
+              <aside class="col-sm-4 sidebar lp20">
+                  <div class="sidebox widget">
+                  <div class="section-title">
+                      <h3 class="widget-title">Address</h3>
+                  </div>
+                  <p>Fusce dapibus, tellus commodo, tortor mauris condimentum utellus fermentum, porta sem malesuada magna. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur.</p>
+                  <address>
+                  <strong>Kubb, Inc.</strong><br>
+                  Moon Street Light Avenue, 14/05 <br>
+                  Jupiter, JP 80630<br>
+                  <abbr title="Phone">P:</abbr> (123) 456-7890 <br>
+                  <abbr title="Email">E:</abbr> <a href="mailto:#">first.last@email.com</a>
+                  </address>
+                  </div>
+                  <!-- /.widget --> 
+              </aside>
+              <!-- /.span4 --> 
+          </div>
+
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container inner">
+      <p class="pull-left">© 2019 Rkhangraphy. All rights reserved.</p>
+      <ul class="social pull-right">
+          <li><a href="https://www.instagram.com/raihan_khan_photography/?hl=fr-ca"><i class="icon-s-instagram"></i></a></li>
+          <li><a href="https://www.flickr.com/photos/161481192@N02/albums"><i class="icon-s-flickr"></i></a></li>
+          <li><a href="https://www.facebook.com/rkhangraphy/"><i class="icon-s-facebook"></i></a></li>
+      </ul>
+    </div>
+    <!-- .container --> 
+  </footer>
+  <!-- /footer --> 
+  
+</div>
+<!-- /.body-wrapper --> 
+<script src="assets/js/class/Photosets.js"></script> 
+<script src="assets/js/class/Photoset.js"></script>
+<script src="assets/js/jquery.min.js"></script> 
+<script src="assets/js/bootstrap.min.js"></script> 
+<script src="assets/js/twitter-bootstrap-hover-dropdown.min.js"></script> 
+<script src="assets/js/jquery.themepunch.plugins.min.js"></script> 
+<script src="assets/js/jquery.themepunch.revolution.min.js"></script> 
+<script src="assets/js/jquery.fancybox.pack.js"></script> 
+<script src="assets/js/jquery.fancybox-thumbs.js?v=1.0.2"></script> 
+<script src="assets/js/jquery.fancybox-media.js?v=1.0.0"></script> 
+<script src="assets/js/jquery.isotope.min.js"></script> 
+<script src="assets/js/jquery.easytabs.min.js"></script> 
+<script src="assets/js/idangerous.swiper-2.1.min.js"></script> 
+<script src="assets/js/jquery.fitvids.js"></script> 
+<script src="assets/js/jquery.sticky.js"></script> 
+<script src="assets/js/prettify.js"></script> 
+<script src="assets/js/jquery.slickforms.js"></script> 
+<script src="assets/js/instafeed.min.js"></script> 
+<script src="assets/js/jquery.dcflickr.1.0.js"></script> 
+<script src="assets/js/retina.js"></script> 
+<script src="assets/js/classie.js"></script> 
+<script src="assets/js/scripts.js"></script>
+<!-- DEMO ONLY -->
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/aqua.css" title="kubbaqua-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/green.css" title="kubbgreen-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/lime.css" title="kubblime-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/navy.css" title="kubbnavy-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/orange.css" title="kubborange-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/pink.css" title="kubbpink-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/purple.css" title="kubbpurple-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/red.css" title="kubbred-color" media="screen" />
+<link rel="alternate stylesheet" type="text/css" href="assets/css/switcher/yellow.css" title="kubbyellow-color" media="screen" />
+<script type="text/javascript" src="assets/js/switcher/switchstylesheet.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+	$(".changecolor").switchstylesheet( { seperator:"color"} );
+});
+</script>
+</body>
+</html>
